@@ -85,7 +85,7 @@ public void addSiblingToSiblingList(){
         son.addChild(child2);
         son.addChild(child3);
 
-        List<Person> expected = dad.getGrandChildren();
+
 
         assertEquals(2,dad.getGrandChildren().size());
 }
@@ -106,7 +106,7 @@ public void addSiblingToSiblingList(){
         GC.addPet(Dog2);
         GC.addPet(Puppy);
 
-        List<Pet> expected = GC.getGrandChildrenPets();
+
 
         assertEquals(3, GC.getPets().size());
 }
