@@ -106,7 +106,7 @@ public void addSiblingToSiblingList(){
         GC.addPet(Dog2);
         GC.addPet(Puppy);
 
-        List<Pet> expected = GC.getGrandChildrenPets();
+
 
         assertEquals(3, GC.getPets().size());
 }
