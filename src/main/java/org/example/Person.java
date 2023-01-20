@@ -39,17 +39,14 @@ public void addPet(Pet pet ){
 
 public List<Person> getGrandChildren(){
     ArrayList<Person> grandChildren = new ArrayList<>();
-    for (Person child: children){
-        for( Person grandChild: child.getGrandChildren()){
-            grandChildren.addAll(grandChild.getChildren());
-
+    for (Person child : getChildren()){
+        grandChildren.addAll(child.getChildren());
         }
-    }
     return grandChildren;
 }
 public List<Pet> getGrandChildrenPets(){
         ArrayList<Pet> gCPets = new ArrayList<>();
-    for (Person child : children){
+    for (Person child : getChildren()){
         for (Person grandChild : child.getGrandChildren()){
                gCPets.addAll(grandChild.getGrandChildrenPets());
 

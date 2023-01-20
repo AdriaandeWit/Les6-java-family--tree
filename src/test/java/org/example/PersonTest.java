@@ -68,6 +68,7 @@ public void addSiblingToSiblingList(){
         Person person = new Person("Henk", "willem", "beer","man",45);
         //act
     person.addPet(dog);
+
     List<Pet> expected = person.getPets();
         //assert
         assertEquals(List.of(dog),expected );
@@ -75,16 +76,18 @@ public void addSiblingToSiblingList(){
 }
 @Test
     public void getGrandChildren(){
-        Person child1 = new Person("Ruud","Beer","man",4);
+        Person child3 = new Person("Peter", "Beer", "man ",2);
+        Person son  = new Person("Ruud","Beer","man",4);
         Person child2 = new Person("Daniele", "Beer", "vrouw",6);
         Person dad = new Person("Henk", "Beer","man",45 );
 
-        dad.addChild(child1);
-        child1.addChild(child2);
+        dad.addChild(son);
+        son.addChild(child2);
+        son.addChild(child3);
 
         List<Person> expected = dad.getGrandChildren();
 
-        assertEquals(List.of(dad),expected);
+        assertEquals(2,dad.getGrandChildren().size());
 }
 
     @Test
@@ -125,10 +128,8 @@ public void addSiblingToSiblingList(){
     uncle.addChild(nephew);
     uncle.addChild(nephew2);
 
-    int expect = person.getAllNiece().size();
-
-
-    assertEquals(3,expect);
+     List<Person> expect = person.getAllNiece();
+    assertEquals(3,person.getAllNiece().size());
 
 
 
