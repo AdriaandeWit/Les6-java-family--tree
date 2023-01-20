@@ -85,7 +85,7 @@ public void addSiblingToSiblingList(){
         son.addChild(child2);
         son.addChild(child3);
 
-        List<Person> expected = dad.getGrandChildren();
+
 
         assertEquals(2,dad.getGrandChildren().size());
 }
